@@ -1,0 +1,16 @@
+.places{
+    background: #fff;
+    /* height: 200px; */
+    border:  1px solid #F2F7F2
+}
+#map{
+    height: 500px;
+    background: #fff;
+
+}
+.navbar-default{
+  background-color: #ACBDBA; !important;
+}
+body{
+  background-color: #fff;
+}
