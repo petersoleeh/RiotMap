@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%load bootstrap3%}
+
+{% block content %}
+{{block.super}}
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        {%if user.is_authenticated%}
+        <form action="/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form%}
+            <input type="submit" value="Submit" class="btn btn-primary">
+          </form>
+          <br>
+          {%else%}
+          <h5>Please Login to add riot prone Areas</h5>
+          {%endif%}
+          <div class="places">
+              <p><strong id="home">Mombasa<small>@David</small></strong></p>
+              <p><strong id="away">nairobi <small>@{{user.username}}</small></strong></p>
+              <p><strong>thika</strong></p>
+
+          </div>
+      </div>
+      <div class="col-md-8">
+          <div id="map">
+
+          </div>
+      </div>
+    </div>
+</div>{%endblock%}
