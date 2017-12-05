@@ -1,4 +1,5 @@
 from django import forms
+from .models import Riot
 
 MAGNITUDE_LEVELS = (
     ('high','High'),
@@ -8,10 +9,8 @@ MAGNITUDE_LEVELS = (
 
 
 
-class RiotForm(forms.Form):
-    location= forms.CharField()
-    magnitude = forms.MultipleChoiceField(
-        required = True,
-        widget = forms.RadioSelect,
-        choices = MAGNITUDE_LEVELS
-    )
+class RiotForm(forms.ModelForm):
+    class Meta:
+
+        model = Riot
+        fields = ('location','magnitude',)

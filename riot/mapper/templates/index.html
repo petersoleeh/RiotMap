@@ -3,6 +3,9 @@
 
 {% block content %}
 {{block.super}}
+<header>
+  <h1 class="text-center">RIOT MAP</h1>
+</header>
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-4">
@@ -10,7 +13,7 @@
         <form action="/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_form form%}
-            <input type="submit" value="Submit" class="btn btn-primary">
+            <input type="submit" value="Submit" class="btn btn-primary" name="search">
           </form>
           <br>
           {%else%}
@@ -20,6 +23,7 @@
               <p><strong id="home">Mombasa<small>@David</small></strong></p>
               <p><strong id="away">nairobi <small>@{{user.username}}</small></strong></p>
               <p><strong>thika</strong></p>
+
 
           </div>
       </div>
